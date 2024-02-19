@@ -1,0 +1,76 @@
+/* Table of Contents:
+ * 1. Variables
+ * 2. General Styling 
+ * 3. header 
+ * 4. Counter, Mythology Roulette
+ */
+
+
+/* 1. Variables */
+
+:root { 
+     	--fs-main: clamp(1.2rem, 2.5vw, 1.46rem); 
+	
+	--clr-links-base: #40F0E0;
+	--clr-links-hover: #11FF00;
+	
+	--clr-yuko: #26619C;
+}
+
+
+/* 2. General Styling */
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: black;
+
+	word-wrap: break-word;
+	font-size: var(--fs-main);
+}
+
+a {
+	text-decoration: none;
+	color: var(--clr-links-base);
+}
+
+a:hover {
+	color: var(--clr-links-hover);
+}
+
+a:focus {
+	color: lightgreen;
+	outline: 2px solid red;
+}
+
+.center {
+	text-align: center;
+}
+
+
+/* 3. header */
+
+header {
+	background-color: var(--clr-yuko);
+	color: white;
+
+	padding: 0.1rem;
+}
+
+
+/* 4. Counter, Mythology Roulette */
+
+main {
+	color: lime;
+	background-color: darkblue;
+
+	padding: 0.1rem 1.3rem;
+}
+
+footer {
+        color: white;
+        padding: 0.2rem 1rem;
+}

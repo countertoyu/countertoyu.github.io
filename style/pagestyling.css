@@ -1,0 +1,209 @@
+/*
+
+I. Table of Contents:
+
+I. Table of Contents
+II. Policy for Making New Pages
+III. Book Page Recommendations 
+IV. Recommendations for replacing page number
+
+1. General Styling
+2. Navigation
+3. The Book Page (main)
+
+
+II. Policy for making new pages:
+
+1. Copy Basic_Book_Page_Structure.
+2. Replace page number inside webpage title. (See IV for how to replace a page's number.)
+3. Replace page number for this page.
+4. Replace page number in link to previous page (if applicable).
+5. Replace page number in link to next page.
+
+
+III. Book Page Recommendations v1.0
+
+Basic_Book_Page_Structure =  Webpage_Start +
+	      		     Head +
+		             body_Start_Tag +
+			     Navigation +
+			     main_Start_Tag +
+			     Book_Page_End +  
+			     main_End_Tag +
+			     Webpage_End 
+				   
+Webpage_Start =  doctype declaration +
+                 html_Start_Tag
+			
+Head =  Character_Set_Declaration +
+        Book_Page_Webpage_Title +
+        Viewport_Seting +
+	Book_Page_Webpage_Description
+	Webpage_Icon +
+	Stylesheet_Linking
+
+Book_Page_Webpage_Title =  Chapter_Num + 
+                           Page_Num +
+		     	   Series_Name 
+
+Character_Set_Declaration = Declare character set to utf-8.
+
+Stylesheet_Linking: Recommendations inside menustyling.css, section II-4.
+
+Navigation =  Return_To_Index_Link +
+              (after first page: Previous_Page_Link) 
+			 
+Book_Page_End =  Space + 
+                 Next_Page_Link 
+				 
+Webpage_End =  body_End_Tag + 
+               html_End_Tag
+
+I hope this mini-dictionary helps specify the book page recommendations used as a simple light reading.
+
+
+IV Recommendations for replacing page number:
+
+1. If new page is based on previous page:
+    1.1 Increment previous page and next page numbers.
+Otherwise,
+2. If new page is based on page farther behind:
+    2.1 Verify new previous page and next page numbers.
+	2.2 Replace previous and next page numbers
+	
+*/
+
+
+/* 1. General Styling */
+
+:root {
+	--fs-main: clamp(1.2rem, 2.5vw, 1.46rem);
+
+	--clr-links-base: #40F0E0;
+	--clr-links-hover: #11FF00;
+	
+	--clr-nav-bg: rgba(100, 100, 100, 0.7);
+	--clr-nav-border: rgba(0, 115, 255, 0.5);
+	--clr-page-bg: rgba(0, 0, 0, 0.7);
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	word-wrap: break-word;
+	
+	background-color: silver;
+	
+	color: white;
+	font-size: var(--fs-main);
+	text-shadow: 1px 1px black;
+}
+
+a {
+	text-decoration: none;
+	color: var(--clr-links-base);
+}
+
+a:hover {
+	color: var(--clr-links-hover);
+}
+
+a:active {
+	color: lightgreen;
+	outline: 2px solid red;
+}
+
+.center {
+	text-align: center;
+}
+
+
+/* 2. Navigation  */
+
+nav a {
+	background-color: var(--clr-nav-bg);
+	padding: 0.5rem 0.55rem;
+	border-inline: 0.3rem solid var(--clr-nav-border);
+	
+	display: inline-block; /* Display on multiple lines if no room without breaking up options across lines, as is the case for inline  */
+	margin: 0.2rem 0.3rem;
+}
+
+
+
+/* 4. The Book Page (main)  */
+
+main {
+	width: 80%;
+	margin-inline: auto;
+	
+	background-color: var(--clr-page-bg);
+	border: 2px solid green;
+	margin-bottom: 2.5rem;
+}
+
+main hr, main p, main blockquote {
+	text-indent: 4ch;
+	width: min(75ch, 93%);
+	margin-inline: auto;
+}
+
+.melody p{
+	text-indent: 0ch;
+}
+
+
+.heading, .subheading {
+	width: min(75ch, 93%);
+	margin-top: 2.7rem;
+	margin-inline: auto;
+}
+
+main img {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+
+	display: block;
+	width: min(75ch, 90%);
+	margin-inline: auto;
+
+	height: auto;
+}
+
+table {
+	margin-inline: auto;
+}
+
+.answers {
+	display: none;
+}
+
+.show_answers {
+	display: none;
+}
+
+.show_answers_btn {
+	border: 2px solid green;
+	outline: 2px solid black;
+	background-color: gray;
+	
+	text-indent: 0ch;
+	padding: 0.4rem;
+}
+
+.show_answers_btn:hover {
+	background-color: silver;
+}
+
+.show_answers:checked ~ .answers {
+	display: block;
+}
+
+
+.prev_page_link {
+	display: inline-block;
+	margin-top: 2.2rem; 
+}
